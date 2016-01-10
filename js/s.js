@@ -15,14 +15,15 @@ $(document).ready(function (){
     }
   );
   wow.init();
-
-});
-
-window.onload=function(){
   var scrollable = $('main,.bigdata');
   scrollable.on('scroll.wow', function(){
       scrollable.find('.wow:not(.animated):in-viewport').removeAttr('style').addClass('animated');
   });
+
+   $('.loading').slideUp('fast');
+});
+
+
 /*  $('#demo-menu-lower-left').click(function () {
     $('.bigdata-bg').fadeIn('slow');
     $('.bigdata').fadeIn('slow');
@@ -30,7 +31,7 @@ window.onload=function(){
   $('.bigdata-bg,#close').click(function () {
     $('.bigdata').fadeOut('slow');
     $('.bigdata-bg').fadeOut('slow');
-  }); 
+  });
   $("#godown").click(function (event) {
       $('main').animate({ scrollTop: '800px' }, "slow");
   });
@@ -47,5 +48,41 @@ window.onload=function(){
         });
       }
   }); */
-//  $('.loading').slideUp('fast');
-};
+
+  var app = angular.module('mia', [
+      'ngRoute',
+      'ngCookies'
+  ]);
+  app.config(function($routeProvider, $locationProvider) {
+    $routeProvider
+    .when('/',{
+      templateUrl:'/pages/home.html',
+      controller: 'homepage'
+    })
+    .when('/about',{
+      templateUrl:'/pages/about.html'
+    })
+    .when('/contact',{
+      templateUrl:'/pages/contact.html'
+    })
+    .when('/news',{
+      templateUrl:'/pages/news.html'
+    })
+    .when('/post/:slug',{
+      templateUrl:'/pages/post.html'
+    })
+    .when('/companies',{
+      templateUrl:'/pages/companies.html'
+    })
+    .when('/company',{
+      templateUrl:'/pages/company.html'
+    })
+    .otherwise({
+      redirectTo:'/'
+    });
+  });
+app.controller('companies');
+app.controller('company');
+app.controller('news');
+app.controller('post');
+app.controller('homepage');

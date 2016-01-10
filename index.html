@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="mia">
 <head>
   <meta charset="utf-8">
   <title>Company</title>
@@ -9,6 +9,9 @@
   <link rel="stylesheet" href="bower_components/animate.css/animate.min.css">
   <link rel="stylesheet" href="css/s.min.css">
   <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/angular-full/angular.min.js"></script>
+  <script src="bower_components/angular-full/angular-route.min.js"></script>
+  <script src="bower_components/angular-full/angular-cookies.min.js"></script>
   <script src="bower_components/material-design-lite/material.min.js"></script>
   <script src="bower_components/wow/dist/wow.min.js"></script>
   <script src="js/isin.js"></script>
@@ -26,10 +29,11 @@
         <div class="mdl-layout-spacer"></div>
         <!-- Navigation. We hide it in small screens. -->
         <nav class="mdl-navigation mdl-layout--large-screen-only">
-          <a class="mdl-navigation__link" href="/index.html">Home</a>
-          <a class="mdl-navigation__link" href="/about.html">About</a>
-          <a class="mdl-navigation__link" href="/products.html">Products</a>
-          <a class="mdl-navigation__link" href="/contact.html">Contact</a>
+          <a class="mdl-navigation__link" href="#/">Home</a>
+          <a class="mdl-navigation__link" href="#/about">About</a>
+          <a class="mdl-navigation__link" href="#/companies">Companies</a>
+          <a class="mdl-navigation__link" href="#/news">News</a>
+          <a class="mdl-navigation__link" href="#/contact">Contact</a>
           <button id="lang-switcher" class="mdl-button mdl-js-button mdl-button--icon">
               <i class="material-icons">language</i>
           </button>
@@ -44,239 +48,29 @@
     <div class="mdl-layout__drawer">
       <span class="mdl-layout-title">Company</span>
       <nav class="mdl-navigation">
-        <a class="mdl-navigation__link" href="/index.html">Home</a>
-        <a class="mdl-navigation__link" href="/about.html">About</a>
-        <a class="mdl-navigation__link" href="/products.html">Products</a>
-        <a class="mdl-navigation__link" href="/contact.html">Contact</a>
+        <a class="mdl-navigation__link" href="#/">Home</a>
+        <a class="mdl-navigation__link" href="#/about">About</a>
+        <a class="mdl-navigation__link" href="#/companies">Companies</a>
+        <a class="mdl-navigation__link" href="#/news">News</a>
+        <a class="mdl-navigation__link" href="#/contact">Contact</a>
       </nav>
     </div>
     <main class="mdl-layout__content">
-      <div class="page-content">
+
         <!-- Your content goes here -->
-        <div class="slider">
-          <div class="slide">
-            <img src="img/1.jpg" >
-            <h1 class"">We are AWESOME</h1>
-            <a class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-button--icon"  href="#">
-              <i class="material-icons">arrow_forward</i>
-            </a>
+          <div class="page-content" ng-view >
+
           </div>
-          <div class="slide">
-            <img src="img/2.jpg" >
-            <h1 class"">Made in Aswan</h1>
-            <a class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-button--icon"  href="#">
-              <i class="material-icons">arrow_forward</i>
-            </a>
-          </div>
-          <div class="slide">
-            <img src="img/3.jpg" >
-            <h1 class"">By : Xloka</h1>
-            <a class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-button--icon"  href="#">
-              <i class="material-icons">arrow_forward</i>
-            </a>
-          </div>
-        </div>
-
-        <section class="wow bounce section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
-            <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--indigo-500 mdl-color-text--white">
-              <i class="material-icons">check_circle</i>
-            </header>
-            <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
-              <div class="mdl-card__supporting-text">
-                <h4>Features</h4>
-                Dolore ex deserunt aute fugiat aute nulla ea sunt aliqua nisi cupidatat eu. Nostrud in laboris labore nisi amet do dolor eu fugiat consectetur elit cillum esse.
-              </div>
-              <div class="mdl-card__actions">
-                <a href="#" class="mdl-button">Read our features</a>
-              </div>
-            </div>
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn1">
-              <i class="material-icons">more_vert</i>
-            </button>
-            <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn1" >
-              <li class="mdl-menu__item" tabindex="-1">Lorem</li>
-              <li class="mdl-menu__item" disabled="" tabindex="-1">Ipsum</li>
-              <li class="mdl-menu__item" tabindex="-1">Dolor</li>
-            </ul>
-          </section>
-
-
-          <section class="wow bounce section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
-            <div class="mdl-card mdl-cell mdl-cell--12-col">
-              <div class="mdl-card__supporting-text mdl-grid mdl-grid--no-spacing">
-                <h4 class="mdl-cell mdl-cell--12-col">Products</h4>
-                <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
-                  <div class="section__circle-container__circle mdl-color--primary"></div>
-                </div>
-                <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
-                  <h5>Product #1</h5>
-                  Dolore ex deserunt aute fugiat aute nulla ea sunt aliqua nisi cupidatat eu. Duis nulla tempor do aute et eiusmod velit exercitation nostrud quis <a href="#">proident minim</a>.
-                </div>
-                <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
-                  <div class="section__circle-container__circle mdl-color--primary"></div>
-                </div>
-                <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
-                  <h5>Product #2</h5>
-                  Dolore ex deserunt aute fugiat aute nulla ea sunt aliqua nisi cupidatat eu. Duis nulla tempor do aute et eiusmod velit exercitation nostrud quis <a href="#">proident minim</a>.
-                </div>
-                <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
-                  <div class="section__circle-container__circle mdl-color--primary"></div>
-                </div>
-                <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
-                  <h5>Product #3</h5>
-                  Dolore ex deserunt aute fugiat aute nulla ea sunt aliqua nisi cupidatat eu. Duis nulla tempor do aute et eiusmod velit exercitation nostrud quis <a href="#">proident minim</a>.
-                </div>
-              </div>
-              <div class="mdl-card__actions">
-                <a href="products.html" class="mdl-button">more products</a>
-              </div>
-            </div>
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn2" >
-              <i class="material-icons">more_vert</i>
-            <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></button>
-        <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn2" >
-              <li class="mdl-menu__item" tabindex="-1">Lorem</li>
-              <li class="mdl-menu__item" disabled="" tabindex="-1">Ipsum</li>
-              <li class="mdl-menu__item" tabindex="-1">Dolor</li>
-            </ul>
-          </section>
-
-          <div class="wow bounce page contact-form">
-            <h3>Send a message</h3>
-            <form action="#">
-              <div class="mdl-grid">
-                <div class="mdl-cell mdl-cell--6-col">
-                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                    <input class="mdl-textfield__input" id="name" name="name" type="text" placeholder="Name">
-                  </div>
-                </div>
-                <div class="mdl-cell mdl-cell--6-col">
-                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                    <input class="mdl-textfield__input" id="company" name="company" placeholder="Company" type="text">
-                  </div>
-                </div>
-
-                <div class="mdl-cell mdl-cell--6-col">
-                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                    <input class="mdl-textfield__input" id="phone" name="phone" placeholder="Phone" type="text">
-                  </div>
-                </div>
-                <div class="mdl-cell mdl-cell--6-col">
-                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                    <input class="mdl-textfield__input" id="emailquote" name="email" placeholder="Email" type="email">
-                  </div>
-                </div>
-                <div class="mdl-cell mdl-cell--12-col">
-                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                    <textarea class="mdl-textfield__input" id="describe" name="describe" cols="" placeholder="Describe" rows="8"></textarea>
-                  </div>
-                </div>
-                <div class="mdl-cell mdl-cell--4-col">
-                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                    <select class="mdl-textfield__input" id="type" class="getqoute" name="type">
-                      <option>Project Type</option>
-                      <option value="Small Business Website">Small Business Website</option>
-                      <option value="Ecommerce Website">Ecommerce Website</option>
-                      <option value="Corporate/Enterprise Website">Corporate/Enterprise Website</option>
-                      <option value="Social Media Website">Social Media Website</option>
-                      <option value="Mobile Website">Mobile Website</option>
-                      <option value="Mobile/iPhone App">Mobile/iPhone App</option>
-                      <option value="Web/Facebook App">Web/Facebook App</option>
-                      <option value="Content Management System">Content Management System</option>
-                      <option value="Search Engine Marketing">Search Engine Marketing</option>
-                      <option value="Social Media Marketing">Social Media Marketing</option>
-                      <option value="Other">Other</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="mdl-cell mdl-cell--4-col">
-                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                    <select class="mdl-textfield__input" id="begin" class="getqoute" name="begin">
-                      <option>When would you like to begin?</option>
-                      <option value="Now">Now</option>
-                      <option value="Next week">Next week</option>
-                      <option value="1 month">1 month</option>
-                      <option value="Over 1 month">Over 1 month</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="mdl-cell mdl-cell--4-col">
-                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                    <select class="mdl-textfield__input" id="budget" class="getqoute" name="budget">
-                      <option>What is your budget?</option>
-                      <option value="L.E.1,000-5,000">L.E.1,000-5,000</option>
-                      <option value="L.E.5,000-10,000">L.E.5,000-10,000</option>
-                      <option value="L.E.10,000-20,000">L.E.10,000-20,000</option>
-                      <option value="L.E.20,000-50,000">L.E.20,000-50,000</option>
-                      <option value="L.E.50,000 +">L.E.50,000 +</option>
-                    </select>
-                  </div>
-                </div>
-
-
-                <div class="mdl-cell mdl-cell--12-col">
-                  <button type="submit" class="mdl-button">Submit</button>
-                </div>
-            </form>
-            </div>
-          <footer class="mdl-mega-footer">
-            <div class="mdl-mega-footer__middle-section">
-
-              <div class="mdl-mega-footer__drop-down-section">
-                <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
-                <h1 class="mdl-mega-footer__heading">Features</h1>
-                <ul class="mdl-mega-footer__link-list">
-                  <li><a href="#">About</a></li>
-                  <li><a href="#">Terms</a></li>
-                  <li><a href="#">Partners</a></li>
-                  <li><a href="#">Updates</a></li>
-                </ul>
-              </div>
-
-              <div class="mdl-mega-footer__drop-down-section">
-                <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
-                <h1 class="mdl-mega-footer__heading">Details</h1>
-                <ul class="mdl-mega-footer__link-list">
-                  <li><a href="#">Specs</a></li>
-                  <li><a href="#">Tools</a></li>
-                  <li><a href="#">Resources</a></li>
-                </ul>
-              </div>
-
-              <div class="mdl-mega-footer__drop-down-section">
-                <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
-                <h1 class="mdl-mega-footer__heading">Technology</h1>
-                <ul class="mdl-mega-footer__link-list">
-                  <li><a href="#">How it works</a></li>
-                  <li><a href="#">Patterns</a></li>
-                  <li><a href="#">Usage</a></li>
-                  <li><a href="#">Products</a></li>
-                  <li><a href="#">Contracts</a></li>
-                </ul>
-              </div>
-
-              <div class="mdl-mega-footer__drop-down-section">
-                <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
-                <h1 class="mdl-mega-footer__heading">FAQ</h1>
-                <ul class="mdl-mega-footer__link-list">
-                  <li><a href="#">Questions</a></li>
-                  <li><a href="#">Answers</a></li>
-                  <li><a href="#">Contact us</a></li>
-                </ul>
-              </div>
-
-            </div>
-
-            <div class="mdl-mega-footer__bottom-section">
-              <div class="mdl-logo">Title</div>
-              <ul class="mdl-mega-footer__link-list">
-                <li><a href="#">Help</a></li>
-                <li><a href="#">Privacy & Terms</a></li>
-              </ul>
-            </div>
-
-          </footer>
+          <footer class="mdl-mini-footer">
+      <div class="mdl-mini-footer__left-section">
+        <div class="mdl-logo">Made In Aswan &copy; 2016</div>
+        <ul class="mdl-mini-footer__link-list">
+          <li>    <a href="#/about">About</a></li>
+          <li><a href="#/contact">Contact</a></li>
+        </ul>
       </div>
+    </footer>
+
     </main>
   </div>
 </body>

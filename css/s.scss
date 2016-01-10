@@ -36,6 +36,9 @@ $third-color: #3d3718;
 $bg-color: #1f1e19;
 $white: #fefefe;
 $black: #1e1d19;
+body{
+  overflow: hidden;
+}
 a {
   text-decoration: none;
   color: inherit;
@@ -58,6 +61,7 @@ p {
   animation: slideme 30s infinite;
   -webkit-animation: slideme 30s infinite;
   opacity: 0;
+      overflow: hidden;
   img {
     position: relative;
     width: 100%;
