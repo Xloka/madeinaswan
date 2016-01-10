@@ -2,14 +2,12 @@ $(document).ready(function (){
 
   var wow = new WOW(
     {
-      boxClass:     'wow',      // animated element css class (default is wow)
-      animateClass: 'animated', // animation css class (default is animated)
-      offset:       0,          // distance to the element when triggering the animation (default is 0)
-      mobile:       true,       // trigger animations on mobile devices (default is true)
-      live:         true,       // act on asynchronously loaded content (default is true)
+      boxClass:     'wow',
+      animateClass: 'animated',
+      offset:       0,
+      mobile:       true,
+      live:         true,
       callback:     function(box) {
-        // the callback is fired every time an animation is started
-        // the argument that is passed in is the DOM node being animated
       },
       scrollContainer: ".mdl-layout__content" // optional scroll container selector, otherwise use window
     }
@@ -51,7 +49,8 @@ $(document).ready(function (){
 
   var app = angular.module('mia', [
       'ngRoute',
-      'ngCookies'
+      'ngCookies',
+      'ngSanitize'
   ]);
   app.config(function($routeProvider, $locationProvider) {
     $routeProvider
@@ -72,17 +71,43 @@ $(document).ready(function (){
       templateUrl:'/pages/post.html'
     })
     .when('/companies',{
-      templateUrl:'/pages/companies.html'
+      templateUrl:'/pages/companies.html',
+      controller:'companies'
     })
-    .when('/company',{
-      templateUrl:'/pages/company.html'
+    .when('/company/:slug',{
+      templateUrl:'/pages/company.html',
+      controller:'company'
     })
     .otherwise({
       redirectTo:'/'
     });
   });
-app.controller('companies');
-app.controller('company');
+app.controller('homepage',['$scope', '$http',
+  function ($scope, $http) {
+      $http.get('http://ws.made-in-aswan.org/latest_componeis/').success(function (data) {
+        if( parseInt(data.rsp) === 1){
+          $scope.companies = data.componeis;
+        }
+      });
+  }]);
+app.controller('companies',['$scope', '$http',
+  function ($scope, $http) {
+      $http.get('http://ws.made-in-aswan.org/componeis/').success(function (data) {
+        if( parseInt(data.rsp) === 1){
+          $scope.companies = data.componeis;
+        }
+      });
+  }]);
+app.controller('company',['$scope', '$http',  '$routeParams', '$sce',
+  function ($scope, $http, $routeParams,$sce ) {
+    $http.get('http://ws.made-in-aswan.org/componey/' + $routeParams.slug).success(function(data) {
+      if( parseInt(data.rsp) === 1){
+      $scope.company = data;
+      $scope.trustme = function() {
+               return $sce.trustAsHtml($scope.company.about);
+             };
+      }
+    });
+  }]);
 app.controller('news');
 app.controller('post');
-app.controller('homepage');

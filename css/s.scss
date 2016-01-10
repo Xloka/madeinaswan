@@ -30,7 +30,7 @@
   -webkit-font-smoothing: antialiased;
 }
 //////////////////////// vars/basic //////////////////////
-$primary-color: #B71C1C;
+$primary-color: #38c6f4;
 $secondary-color: #FFEBEE;
 $third-color: #3d3718;
 $bg-color: #1f1e19;
@@ -218,6 +218,17 @@ margin: 8px 0;
     color: #fff;
     text-shadow: 1px 1px 5px #000;
   }
+  p{
+    width: 100%;
+    text-align: center;
+    position: relative;
+  }
+  a{
+    color: #fff;
+    display: inline-block;
+    width: 20px;
+    padding: 20px;
+  }
 }
 //////////////////////// end ////////////////////////////
 //////////////////////// product -page //////////////////////
@@ -245,7 +256,7 @@ margin: 8px 0;
     margin: 0;
     text-align: center;
     font-size: 25px;
-    background-color: #3F51B5;
+    background-color: #38c6f4;
     color: #fff;
     padding: 80px 0;
     height: 100%;
@@ -273,7 +284,7 @@ margin: 8px 0;
     margin: 0;
     text-align: center;
     font-size: 25px;
-    background-color: #3F51B5;
+    background-color: #38c6f4;
     color: #fff;
     padding: 80px 0;
     height: 100%;
@@ -285,6 +296,13 @@ margin: 8px 0;
   }
 }
 //////////////////////// end ////////////////////////////
+
+.mdl-layout__header,.mdl-color--indigo-500,.mdl-color--primary{
+  background-color: #38c6f4 !important;
+}
+.mdl-layout__header-row .mdl-navigation__link{
+  font-weight: bold;
+}
 //////////////////////// footer //////////////////////
 
 //////////////////////// end //////////////////////

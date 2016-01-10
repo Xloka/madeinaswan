@@ -2,16 +2,19 @@
 <html ng-app="mia">
 <head>
   <meta charset="utf-8">
-  <title>Company</title>
-  <meta name="author" content="@mrxloka">
+  <title>Made In Aswan</title>
+  <meta name="description" content="Made In Aswan">
+  <meta name="keywords" content="Made,In,Aswan">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="css/material.indigo-blue.min.css">
   <link rel="stylesheet" href="bower_components/animate.css/animate.min.css">
+  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/s.min.css">
   <script src="bower_components/jquery/dist/jquery.min.js"></script>
   <script src="bower_components/angular-full/angular.min.js"></script>
   <script src="bower_components/angular-full/angular-route.min.js"></script>
   <script src="bower_components/angular-full/angular-cookies.min.js"></script>
+  <script src="bower_components/angular-full/angular-sanitize.min.js"></script>
   <script src="bower_components/material-design-lite/material.min.js"></script>
   <script src="bower_components/wow/dist/wow.min.js"></script>
   <script src="js/isin.js"></script>
@@ -24,7 +27,7 @@
     <header class="mdl-layout__header">
       <div class="mdl-layout__header-row">
         <!-- Title -->
-        <span class="mdl-layout-title">Company</span>
+        <span class="mdl-layout-title"><img style="width: 64px;" src="img/logo.png" alt="" /></span>
         <!-- Add spacer, to align navigation to the right -->
         <div class="mdl-layout-spacer"></div>
         <!-- Navigation. We hide it in small screens. -->
@@ -32,16 +35,16 @@
           <a class="mdl-navigation__link" href="#/">Home</a>
           <a class="mdl-navigation__link" href="#/about">About</a>
           <a class="mdl-navigation__link" href="#/companies">Companies</a>
-          <a class="mdl-navigation__link" href="#/news">News</a>
+          <!--<a class="mdl-navigation__link" href="#/news">News</a>-->
           <a class="mdl-navigation__link" href="#/contact">Contact</a>
-          <button id="lang-switcher" class="mdl-button mdl-js-button mdl-button--icon">
+      <!--    <button id="lang-switcher" class="mdl-button mdl-js-button mdl-button--icon">
               <i class="material-icons">language</i>
           </button>
           <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu" for="lang-switcher">
               <li class="mdl-menu__item">English</li>
               <li class="mdl-menu__item">عربي</li>
               <li class="mdl-menu__item">French</li>
-          </ul>
+          </ul>-->
         </nav>
       </div>
     </header>
@@ -51,7 +54,7 @@
         <a class="mdl-navigation__link" href="#/">Home</a>
         <a class="mdl-navigation__link" href="#/about">About</a>
         <a class="mdl-navigation__link" href="#/companies">Companies</a>
-        <a class="mdl-navigation__link" href="#/news">News</a>
+        <!--  <a class="mdl-navigation__link" href="#/news">News</a>  -->
         <a class="mdl-navigation__link" href="#/contact">Contact</a>
       </nav>
     </div>

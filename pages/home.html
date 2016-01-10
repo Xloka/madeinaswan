@@ -28,65 +28,53 @@
     </header>
     <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
       <div class="mdl-card__supporting-text">
-        <h4>Features</h4>
-        Dolore ex deserunt aute fugiat aute nulla ea sunt aliqua nisi cupidatat eu. Nostrud in laboris labore nisi amet do dolor eu fugiat consectetur elit cillum esse.
+        <h4>Who we are ? </h4>
+        Made In Aswan is non-profit Organization , that created for define projects and events that start in aswan city to give a knowledge about aswan city to researchers and investors.
       </div>
       <div class="mdl-card__actions">
-        <a href="#" class="mdl-button">Read our features</a>
+        <a href="#/about" class="mdl-button">Read More</a>
       </div>
     </div>
-    <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn1">
+<!--    <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn1">
       <i class="material-icons">more_vert</i>
     </button>
     <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn1" >
       <li class="mdl-menu__item" tabindex="-1">Lorem</li>
       <li class="mdl-menu__item" disabled="" tabindex="-1">Ipsum</li>
       <li class="mdl-menu__item" tabindex="-1">Dolor</li>
-    </ul>
+    </ul> -->
   </section>
 
 
   <section class="wow bounce section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
     <div class="mdl-card mdl-cell mdl-cell--12-col">
-      <div class="mdl-card__supporting-text mdl-grid mdl-grid--no-spacing">
-        <h4 class="mdl-cell mdl-cell--12-col">Products</h4>
+      <div class="mdl-card__supporting-text ">
+        <h4 class="mdl-cell mdl-cell--12-col">Latest Added</h4>
+        <div class="mdl-grid mdl-grid--no-spacing"  ng-repeat="company in companies" >
         <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
-          <div class="section__circle-container__circle mdl-color--primary"></div>
+        <a href="#/company/{{company.alias}}"> <img src="{{company.logo.thumb}}" style="width:100px;" alt="" /></a>
         </div>
         <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
-          <h5>Product #1</h5>
-          Dolore ex deserunt aute fugiat aute nulla ea sunt aliqua nisi cupidatat eu. Duis nulla tempor do aute et eiusmod velit exercitation nostrud quis <a href="#">proident minim</a>.
+          <a href="#/company/{{company.alias}}">     <h5>{{company.name}}</h5></a> 
+          {{company.slogan}}
         </div>
-        <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
-          <div class="section__circle-container__circle mdl-color--primary"></div>
-        </div>
-        <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
-          <h5>Product #2</h5>
-          Dolore ex deserunt aute fugiat aute nulla ea sunt aliqua nisi cupidatat eu. Duis nulla tempor do aute et eiusmod velit exercitation nostrud quis <a href="#">proident minim</a>.
-        </div>
-        <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
-          <div class="section__circle-container__circle mdl-color--primary"></div>
-        </div>
-        <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
-          <h5>Product #3</h5>
-          Dolore ex deserunt aute fugiat aute nulla ea sunt aliqua nisi cupidatat eu. Duis nulla tempor do aute et eiusmod velit exercitation nostrud quis <a href="#">proident minim</a>.
-        </div>
-      </div>
-      <div class="mdl-card__actions">
-        <a href="products.html" class="mdl-button">more products</a>
       </div>
     </div>
-    <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn2" >
+      <div class="mdl-card__actions">
+        <a href="#/companies" class="mdl-button">More..</a>
+      </div>
+    </div>
+  <!--      <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn2" >
       <i class="material-icons">more_vert</i>
     <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></button>
 <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn2" >
       <li class="mdl-menu__item" tabindex="-1">Lorem</li>
       <li class="mdl-menu__item" disabled="" tabindex="-1">Ipsum</li>
       <li class="mdl-menu__item" tabindex="-1">Dolor</li>
-    </ul>
+    </ul> -->
   </section>
 
-  <div class="wow bounce page contact-form">
+<!--      <div class="wow bounce page contact-form">
     <h3>Send a message</h3>
     <form action="#">
       <div class="mdl-grid">
@@ -164,3 +152,14 @@
         </div>
     </form>
     </div>
+     -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-72178505-3', 'auto');
+    ga('send', 'pageview');
+
+  </script>
